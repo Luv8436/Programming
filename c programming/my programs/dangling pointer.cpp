@@ -10,7 +10,9 @@ int *increment(int n)
 int main()
 {
 	int *p;
-	p=increment(1);
+	int n;
+	scanf("%d",&n);
+	p=increment(n);
 	printf("%d\n",*p);
 }
 

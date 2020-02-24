@@ -1,4 +1,4 @@
-//post order traversing of tree
+//post inorder traversing of tree
 #include<stdio.h>
 #include<stdlib.h>
 struct node{
@@ -38,11 +38,11 @@ void traversal(struct node *root )
 		traversal(root->left);
 	}
 	
+	//print root data
+	printf("%d ",root->data);
+	
 	if (root->right != NULL)
 	{
 		traversal(root->right);
 	}
-	
-	//print root data
-	printf("%d ",root->data);
 }
