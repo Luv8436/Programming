@@ -17,7 +17,6 @@ int main()
 		// taking small variable to arr[i]
 		int small = arr[i];
 		int index = i;
-		int flag = 0;
 		// inner loop
 		for(int j = i + 1 ; j < n ; j++)
 		{
