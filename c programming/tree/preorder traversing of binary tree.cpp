@@ -21,14 +21,14 @@ void create_tree(struct student **ptr)
 	scanf("%d",&((*ptr)->data));
 	((*ptr)->left) = NULL;
 	((*ptr)->right) = NULL;
-	printf("do you want to enter the left element(y/n): ");
+	printf("do you want to enter the element left to %d(y/n): ",(*ptr)->data);
 	scanf(" %c",&c);
 	if(c=='y')
 	{
 		create_tree(&((*ptr)->left));
 		printf("\n");
 	}
-	printf("do you want to enter the right element(y/n): ");
+	printf("do you want to enter the element right to %d(y/n): ",(*ptr)->data);
 	scanf(" %c",&c);
 	if(c=='y')
 	{
