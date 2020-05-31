@@ -1,6 +1,5 @@
 #include<stdio.h>
-//program for returning a pointer from an function 
-//DANGLING POINTER
+// program for returning a pointer from an function DANGLING POINTER
 int *increment(int n)
 {
 	int temp;
@@ -11,9 +10,7 @@ int *increment(int n)
 int main()
 {
 	int *p;
-	int n;
-	scanf("%d",&n);
-	p=increment(n);
+	p=increment(1);
 	printf("%d\n",*p);
 }
 
