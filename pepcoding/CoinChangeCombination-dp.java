@@ -27,33 +27,35 @@ Note2 -> You are required to find the count of combinations and not permutations
                   2
 
 
-                  import java.io.*;
-                  import java.util.*;
-                  
-                  public class Main {
-                  
-                      public static void main(String[] args) throws Exception {
-                          Scanner scn = new Scanner(System.in);
-                          int n = scn.nextInt();
-                          int arr[] = new int[n];
-                          for(int i=0;i<n;i++)
-                          {
-                              arr[i] = scn.nextInt();
-                          }
-                          int tar = scn.nextInt();
-                          
-                          // declaring the dp array ith element of which stores the number of combinations of 
-                          // getting the sum=i from the denominations of jth coin from the arr
-                          int dp[] = new int[tar+1];
-                          dp[0] = 1;
-                          for(int index=0;index<n;index++)
-                          {
-                              int coin = arr[index];
-                              for(int i=coin;i<dp.length;i++)
-                              {
-                                  dp[i] += dp[i-coin];
-                              }
-                          }
-                          System.out.println(dp[tar]);
-                      }
-                  }
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = scn.nextInt();
+        }
+        int tar = scn.nextInt();
+        
+        // declaring the dp array ith element of which stores the number of combinations of 
+        // getting the sum=i from the denominations of jth coin from the arr
+        // loop should be each coin at once 
+        // like for coin==1 check all targets from 0 to tar and loop them for each coin
+        int dp[] = new int[tar+1];
+        dp[0] = 1;
+        for(int index=0;index<n;index++)
+        {
+            int coin = arr[index];
+            for(int i=coin;i<dp.length;i++)
+            {
+                dp[i] += dp[i-coin];
+            }
+        }
+        System.out.println(dp[tar]);
+    }
+}
